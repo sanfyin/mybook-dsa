@@ -1,24 +1,54 @@
-\documentclass{book}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%Book by C. Has%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper]{book}
+\include{preamble}
 
-\include{packages}
-
-
+%=======================================================================
 \begin{document}
-
+	
+%%frontmatter:  half title, frontispiece, title page, colophon (copyright page), dedication, toc, preface, acknowledgements
 \frontmatter
-
 \pagestyle{empty}
-\include{front/title}
-\include{front/colophon}
-\include{front/dedication}
-
+\singlespacing
+	
+\include{frontmatter/title}
+\include{frontmatter/colophon}
+\include{frontmatter/dedication}
+	
 \pagestyle{plain}
-\include{front/preface}
+\onehalfspacing
+	
+\include{frontmatter/preface}
 \tableofcontents
 
+%==========================================================================	
+%%mainmatter: parts and chapters
 \mainmatter
+\pagestyle{fancy}
+\onehalfspacing
+	
+\include{mainmatter/SlidingWindow/SlidingWindow.tex}
+	
+\appendix
+\include{backmatter/app1}
+%\include{backmatter/app2}
 
-
+%==========================================================================	
+%backmatter: appendix, bibliography, index, postface
 \backmatter
+\pagestyle{fancy}
+\singlespacing
+	
 
+\cleardoublepage
+\printindex
+
+\onehalfspacing
+\include{backmatter/postface}
+
+%========================================================================
+%%front cover, spline, and back cover
+	
 \end{document}
+
+%*************************************************************************
+
